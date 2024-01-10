@@ -7,6 +7,8 @@ start-investments:
 start-admin:
 	cd admin/ && npm install && npm start
 
-tests:
+tests-cli:
 	curl "http://localhost:8083/admin/generatecsv"
-	
+
+tests-unit:
+	cd admin/ && npm run test
