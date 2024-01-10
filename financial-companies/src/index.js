@@ -13,6 +13,7 @@ const logger = winston.createLogger({
   ],
 })
 
+console.log("Financial Companies App Started")
 const app = express()
 
 app.get("/companies", (req, res) => {
