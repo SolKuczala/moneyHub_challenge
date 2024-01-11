@@ -5,6 +5,7 @@ const request = require("request")
 const winston = require('winston')
 const dataTransformer = require('./data_transformation.js')
 
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.simple(),
@@ -38,11 +39,12 @@ app.get("/investments/:id", (req, res) => {
 // The **Holding** property should be the name of the holding account given by the **financial-companies** service
 // The **Value** property can be calculated by `investmentTotal * investmentPercentage`
 app.get("/admin/generatecsv", (req, res) => {
+
   request.get(`${config.investmentsServiceUrl}/investments`, (e, _, investments) => {
     if (e) {
       console.error(e)
       res.sendStatus(500)
-    }else{
+    }else{      
       const investmentsData = JSON.parse(investments)
         request.get(`${config.financialCompaniesServiceUrl}/companies`, (e, _, companies) => {
           if (e) {
