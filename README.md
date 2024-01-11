@@ -79,3 +79,4 @@ Financial Companies - localhost:8082
 
 Admin - localhost:8083
 - `/investments/:id` get an investment record by id
+- `/admin/generatecsv` generates a csv of the investments and companies combined data and send it to the investments service
