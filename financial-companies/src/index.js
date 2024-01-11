@@ -1,19 +1,7 @@
 const express = require("express")
 const config = require("config")
 const companies = require("./data")
-const winston = require('winston')
 
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.simple(),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-  ],
-})
-
-console.log("Financial Companies App Started")
 const app = express()
 
 app.get("/companies", (req, res) => {

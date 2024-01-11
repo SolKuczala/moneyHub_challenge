@@ -3,17 +3,6 @@ const bodyParser = require("body-parser")
 const config = require("config")
 const investments = require("./data")
 const R = require("ramda")
-const winston = require('winston')
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.simple(),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-  ],
-})
 
 const app = express()
 
